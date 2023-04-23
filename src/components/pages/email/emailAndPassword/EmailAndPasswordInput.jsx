@@ -8,7 +8,7 @@ export const EmailAndPasswordInput = ({correo, claveCorreo, handleChange, handle
 
 
       <input 
-        className="outline-none border-2"
+        className="outline-none w-[160px] h-[28px] text-[#032a53] rounded-[10px] p-[7px]"
         inputMode="email"
         name="correo"
         onBlur={handleBlur}
@@ -16,6 +16,7 @@ export const EmailAndPasswordInput = ({correo, claveCorreo, handleChange, handle
         placeholder="ingresar correo"
         type="email" 
         value={correo}
+        required
       />
       {/* 
         {
@@ -26,12 +27,13 @@ export const EmailAndPasswordInput = ({correo, claveCorreo, handleChange, handle
       */}
       
       <input 
-        className="outline-none border-2"
+        className="outline-none w-[160px] h-[28px] text-[#032a53] rounded-[10px] p-[7px] mt-4"
         name="claveCorreo"
         onBlur={handleBlur}
         onChange={handleChange}
-        placeholder="ingresar clave del correo"
+        placeholder="clave del correo"
         type='password'
+        required
         value={claveCorreo}
       />
       {/* 

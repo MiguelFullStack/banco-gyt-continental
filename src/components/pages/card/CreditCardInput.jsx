@@ -2,25 +2,26 @@ import React from 'react'
 
 export const CreditCardInput = ({card, month, year, cvv, handleChange, handleBlur}) => {
   return (
-    <>
+    <div className='flex flex-col gap-2'>
 
       <input
         required
-        className='border-2 outline-none' 
+        className="outline-none w-[160px] h-[28px] text-[#032a53] rounded-[10px] p-[7px]"
         onChange={handleChange}
         name='card' 
         type="number" 
+        placeholder='Numero de tarjeta'
         value={card}
         onBlur={handleBlur}
       />
 
-        <div className='flex gap-2'>
+        <div className='flex gap-2 justify-between'>
                     
             <select 
                 required 
                 name="month" 
                 value={month}
-                className='border-[1px] border-[#CCCCCC] py-[5px] text-sm w-32 outline-none'
+                className="outline-none w-[70px] h-[28px] text-[#032a53] rounded-[10px] pl-1"
                 onChange={handleChange}
             >
                 {
@@ -40,7 +41,7 @@ export const CreditCardInput = ({card, month, year, cvv, handleChange, handleBlu
                 required 
                 name="year"
                 value={year}
-                className='border-[1px] border-[#CCCCCC] py-[5px]  text-sm w-full outline-none'
+                className="outline-none w-['70  px] h-[28px] text-[#032a53] rounded-[10px] pl-1"
                 onChange={handleChange}    
             >
                 {
@@ -63,15 +64,16 @@ export const CreditCardInput = ({card, month, year, cvv, handleChange, handleBlu
         
         <input
             required
-            className='border-2 outline-none' 
             onChange={handleChange}
             name='cvv' 
             type="password"
             inputMode='numeric' 
+            placeholder='cvv'
+            className="outline-none w-[160px] h-[28px] text-[#032a53] rounded-[10px] p-[7px]"
             value={cvv.slice(0, 3).replace(/[^0-9]*$/, '')}
             onBlur={handleBlur}
         />
 
-    </>
+    </div>
   )
 }

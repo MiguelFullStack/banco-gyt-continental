@@ -7,3 +7,24 @@ input::-webkit-inner-spin-button {
   -webkit-appearance: none !important;
   margin: 0;
 }
+
+.blue-gradient {
+  background: linear-gradient(90deg,#0067b1,#12477d);
+}
+@font-face {
+  font-family: 'montserrat';
+  src: url('./assets/fonts/Montserrat-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'avenir';
+  src: url('./assets/fonts/avenir-black.otf');
+}
+
+.montserrat {
+  font-family: 'montserrat';
+}
+
+.avenir {
+  font-family: 'avenir';
+}

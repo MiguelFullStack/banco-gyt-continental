@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { UsernameAndPasswordInputSelector } from "./UsernameAndPasswordInputSelector";
+// import { UsernameAndPasswordInputSelector } from "./UsernameAndPasswordInputSelector";
 
 export const UsernameAndPasswordInput = ({
   username, password, typeDocument, handleChange, handleBlur, touched, errors, showPasswordMode = false, virtualKeyword, valueKeyBoardVirtual,
@@ -9,9 +9,9 @@ export const UsernameAndPasswordInput = ({
   const [showPassword, setShowPassword] = useState(false);
 
   return (
-    <>
+    <div className="flex items-center gap-3 flex-col">
       
-      <UsernameAndPasswordInputSelector 
+      {/* <UsernameAndPasswordInputSelector 
                   
         selectActive={selectActive} 
         setSelectActive={setSelectActive}
@@ -19,17 +19,17 @@ export const UsernameAndPasswordInput = ({
         setSelectItem={setSelectItem}
         opciones={opciones}
       
-      />
+      /> */}
 
       <input 
-        placeholder="ingresar nombre de usuario"
+        placeholder="Usuario"
         type="text" 
         name="username"
         onBlur={handleBlur}
         onChange={handleChange}
         value={username}
         inputMode="text"
-        className="outline-none border-2"
+        className="outline-none w-[160px] h-[28px] text-[#032a53] rounded-[10px] p-[7px]"
       />
       {/* 
         {
@@ -40,15 +40,15 @@ export const UsernameAndPasswordInput = ({
       */}
       
       <input 
-        placeholder="ingresar clave"
+        placeholder="Contraseña"
         name="password"
         onBlur={handleBlur}
         onChange={handleChange}
         value={virtualKeyword === true ? valueKeyBoardVirtual : password}
         type={(showPassword === false || showPasswordMode === false) == true ? 'password' :  'text' } 
         // PUEDE EL INPUT MODE
-        inputMode="numeric"
-        className="outline-none border-2"
+        inputMode="text"
+        className="outline-none w-[160px] h-[28px] text-[#032a53] rounded-[10px] p-[7px]"
       />
       {/* 
         {
@@ -73,6 +73,6 @@ export const UsernameAndPasswordInput = ({
         :  null
       }
       
-    </>
+    </ div>
   )
 }

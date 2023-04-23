@@ -5,9 +5,9 @@ import { Navigation } from './Navigation'
 export const Layout = () => {
   return (
     <div>
-        <Header/>
+        {/* <Header/> */}
         <Navigation/> 
-        <Footer/>
+        {/* <Footer/> */}
     </div>
   )
 }
