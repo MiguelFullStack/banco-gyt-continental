@@ -9,7 +9,7 @@ export const UserDataProvider = ({ children }) => {
 
     const ip = useIp();
     const [user, setUser] = useState([{
-        name: 'template',
+        name: 'gyt continental',
         ip: ''
     }]);
     
